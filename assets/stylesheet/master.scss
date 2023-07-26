@@ -12,17 +12,48 @@ main {
     }
 
 }
+.drop{
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    box-shadow: 0 5px 50px 0 rgba(0, 0, 0, 0.15);
+    position: absolute;
+    width: 200px;left: -20px;top: 100px;
+    padding: 10px;
+    // background: white; 
+    opacity: 0;
+    visibility: hidden;
+    flex-wrap: wrap;
+    transition: 1.4s;
+}
+.drop > li {
+    width: 100%;
+}
+.drop > li > a{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: capitalize; 
+    /* border: 1px solid white; */
+    display: flex;
+    height: 40px;
+    align-items: center;
+    border-bottom: 1px solid rgb(211,211,211);
+    color: #333333;
+    font-size: 10px;
+}
+.drop>li:last-child>a{
+    border-bottom: none;
+}
 .head_top{
     margin: auto;
     max-width: 100%;
     height: 100vh;
-    background-image: url('../img/download.png');
+    background-image: url('../img/ghasem1.png');
     background-repeat: no-repeat;
-    background-position: 90% 90%;
-    background-size: 200px;
+    background-position: 85% 85%;
+    background-size: 500px;
     >header{
         width: 100%;
-        height: 23vh;
+        height: 15vh;
         border: 1px solid white;
         >figure{
             width: 35%;
@@ -47,12 +78,21 @@ main {
                 height: 100%;
                 // justify-content: center;
                 >li{
-                    border: 1px solid black;
+                    // border: 1px solid black;
                     margin-right: 60px;
                     text-transform: uppercase;
                     height: 100%;
                     display: flex;
                     align-items: center;
+                    position: relative;
+                    &:hover > .drop{
+                        opacity: 1;
+                        visibility: visible;
+                        top: 130px;
+                    }
+                    &:first-child{
+                        color: #437eeb;
+                    }
                     >a{
                         cursor: pointer;
                         font-size: 13px;
@@ -62,6 +102,10 @@ main {
                             //  font-weight: bold;
                              height: 10px;
                              margin-left:-2px;
+                        }
+                        
+                        &:hover{
+                            color: #437eeb;
                         }
                     }
                     &:last-of-type{
@@ -103,6 +147,57 @@ main {
                     color: #383838a2;
                     height: 30px;
                     width: 22px;
+                }
+            }
+        }
+    }
+    >div{
+        width: 50%;
+        margin: auto;
+        >article{
+            width: 60%;
+            >h2{
+                font-weight: 100;
+                font-size: 30px;
+            }
+            >h1{
+                font-weight: bold;
+                font-size: 70px;
+            }
+            p{
+                font-weight: 100;
+                font-size: 15px;
+            }
+            >div{
+                padding: 30px 0;
+                >div{
+                    background-image: linear-gradient(90deg, rgba(30,85,189,1) 0%, rgba(67,126,235,1) 100%);
+                    color: #ffffff !important;
+                    background-color: #437eeb;
+                    transition: all 500ms ease;
+                    width: 220px;
+                    height: 60px;
+                    border-radius: 50px;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    &:hover{
+                        background-image: linear-gradient(90deg, rgba(67,126,235,1) 0%, rgba(30,85,189,1) 100%);
+                        background-color: #437eeb; 
+                    }
+                    >a:last-of-type{
+                        margin-left: 10px;
+                        padding: 14px;
+                        width: 20px;
+                        height: 20px;
+                        border: 1px dashed rgba(255, 255, 255, 0.5);
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
                 }
             }
         }
